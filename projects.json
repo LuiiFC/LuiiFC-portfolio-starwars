@@ -10,5 +10,11 @@
     "description": "Este portfólio com tema Star Wars e backend dinâmico.",
     "technologies": "HTML, CSS, JavaScript, Node.js",
     "link": "https://github.com/seuusuario/portfolio-starwars"
+  },
+  {
+    "title": "Meu Novo Projeto",
+    "description": "Descrição curta do que o projeto faz e por que é legal.",
+    "technologies": "HTML, CSS, JavaScript",
+    "link": "https://github.com/LuiiFC/novo-projeto"
   }
 ]
