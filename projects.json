@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Sistema de Lembretes IA",
+    "description": "App desktop com notificações programadas em Python.",
+    "technologies": "Python, Plyer, Schedule",
+    "link": "https://github.com/seuusuario/lembrete-ia"
+  },
+  {
+    "title": "Portfolio Star Wars",
+    "description": "Este portfólio com tema Star Wars e backend dinâmico.",
+    "technologies": "HTML, CSS, JavaScript, Node.js",
+    "link": "https://github.com/seuusuario/portfolio-starwars"
+  }
+]
