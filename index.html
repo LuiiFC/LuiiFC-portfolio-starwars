@@ -50,9 +50,26 @@
       <div class="projects-grid" id="projects-container">
         <!-- Projetos serão carregados via JS -->
       </div>
-      <div id="meu-projeto-python" style="margin-top: 30px;">
-          <h2 style="color: #ffe81f; font-family: 'Orbitron', sans-serif;">Terminal Python</h2>
-          <div class="skill-card" style="padding: 20px; border: 1px solid #ffe81f; background: rgba(0,0,0,0.5);">
+
+      <!-- BLOCO PYTHON CORRIGIDO -->
+      <div class="skill-card" style="margin-top: 40px; border: 1px solid #ffe81f; padding: 20px;">
+          <h3 style="color: #ffe81f; font-family: 'Orbitron';">Holocron de Dados</h3>
+          <!-- Criamos uma DIV específica (target) para o texto aparecer -->
+          <div id="saida-final-python" style="color: #fff; font-family: 'Exo 2';">
+              Iniciando sistemas...
+          </div>
+
+          <script type="py">
+              from datetime import datetime
+              from pyscript import display
+              
+              agora = datetime.now().strftime("%d/%m/%Y às %H:%M:%S")
+              # O TARGET AGORA APONTA PARA A DIV INTERNA, NÃO PARA A SECTION
+              display(f"Conexão Imperial estabelecida em: {agora}", target="saida-final-python")
+          </script>
+      </div>
+    </section>
+
               <script type="py">
                   from datetime import datetime
                   from pyscript import display
@@ -106,3 +123,4 @@
 </body>
 
 </html>
+
