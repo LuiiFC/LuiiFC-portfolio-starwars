@@ -10,9 +10,17 @@
   <script type="module" src="https://pyscript.net/releases/2025.2.2/core.js"></script>
 </head>
 <body>
+  <!-- STAR WARS THEME INTRO -->
+<div id="star-wars-intro" class="star-wars-intro">
+  <div class="intro-text-container">
+    <p class="intro-text">A long time ago in a galaxy far, far away....</p>
+  </div>
+  
+  <button id="sound-btn" class="sound-btn">▶️ Ativar Tema Star Wars</button>
+</div>
   <!-- Fundo com a imagem que você enviou -->
   <div class="background-image"></div>
-  
+
   <!-- Overlay escuro para legibilidade -->
   <div class="overlay"></div>
 
@@ -40,10 +48,25 @@
       </div>
     </section>
 
-    <section id="about">
-      <h2>Sobre Mim</h2>
-      <p>Apaixonado por tecnologia, games e criação de soluções. Atualmente focado em Data base, Desenvolvimento Web, Backend com Node.js e Projetos de IA/ML para portfólio. Que a Força esteja com o código!</p>
-    </section>
+    <!-- ==================== SEÇÃO SOBRE MIM COM CRAWL STAR WARS ==================== -->
+<section id="about" class="about-section">
+  <div class="star-wars-crawl">
+    <div class="crawl-content">
+      <h2 class="episode-title">EPISÓDIO IV</h2>
+      <h3 class="episode-subtitle">A NOVA ESPERANÇA</h3>
+      
+      <p>Era uma vez, em uma galáxia não tão distante chamada Recife, PE...</p>
+      
+      <p>Um jovem padawan chamado <strong>Luis Felipe</strong> decidiu trilhar o caminho da Força da Tecnologia.</p>
+      
+      <p>Estudante de Análise e Desenvolvimento de Sistemas, apaixonado por desenvolvimento Full-Stack, 
+      Node.js, Python, Banco de Dados e projetos de Inteligência Artificial.</p>
+      
+      <p class="final-text">Que a Força esteja com o seu código.<br>
+      E que seus projetos sejam lendários.</p>
+    </div>
+  </div>
+</section>
 
     <section id="projects">
       <h2>Projetos</h2>
@@ -68,28 +91,6 @@
               display(f"Conexão Imperial estabelecida em: {agora}", target="saida-final-python")
           </script>
       </div>
-    </section>
-
-              <script type="py">
-                  from datetime import datetime
-                  from pyscript import display
-                  
-                  # Usamos display para o texto aparecer dentro da div, não apenas no console
-                  agora = datetime.now().strftime("%d/%m/%Y às %H:%M:%S")
-                  mensagem = f"Olá, Luis! Este script rodou em: {agora}"
-                  display(mensagem, target="meu-projeto-python")
-              </script>
-          </div>
-      </div>
-      <div id="saida-python"></div>
-
-            <script type="py">
-                # Importando a função display do PyScript
-                from pyscript import display
-    
-                mensagem = "Este texto foi gerado pelo Python e injetado no HTML!"
-                display(mensagem, target="saida-python")
-            </script>
     </section>
 
     <section id="skills">
@@ -120,6 +121,40 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const introDiv = document.getElementById("star-wars-intro");
+  const soundBtn = document.getElementById("sound-btn");
+  let audio = null;
+
+  soundBtn.addEventListener("click", () => {
+    if (!audio) {
+      // ✅ URL com CORS liberado
+      audio = new Audio("star-wars-theme.mp3");
+      audio.volume = 0.45;
+    }
+
+    if (audio.paused) {
+      audio.play()
+        .then(() => {
+          soundBtn.textContent = "⏸️ Pausar Tema Star Wars";
+          setTimeout(() => {
+            introDiv.style.opacity = "0";
+            introDiv.style.pointerEvents = "none"; // ← evita cliques fantasma
+            setTimeout(() => introDiv.style.display = "none", 2500);
+          }, 1500);
+        })
+        .catch((err) => {
+          console.error("Erro de áudio:", err);
+          soundBtn.textContent = "❌ Erro ao carregar áudio";
+        });
+    } else {
+      audio.pause();
+      soundBtn.textContent = "▶️ Ativar Tema Star Wars";
+    }
+  });
+});
+</script>
 </body>
 
 </html>

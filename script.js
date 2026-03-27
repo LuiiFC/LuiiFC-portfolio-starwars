@@ -15,3 +15,4 @@ fetch('/api/projects')
       container.appendChild(card);
     });
   });
+
